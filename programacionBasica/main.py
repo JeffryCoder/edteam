@@ -34,4 +34,5 @@
 
 frutas = ["Mango", "Guayaba", "Guineo"]
 
-print(frutas)
+for fruta in frutas:
+    print(fruta)
