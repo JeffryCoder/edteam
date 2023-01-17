@@ -24,3 +24,6 @@ while numeroIntroducido != numeroParaAdivinar:
 # Funcion para comprobar numeros enteros o strings
 
 # numerosEnteros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+
+# Recordar mejorar esta tarea, agregando un juego para adivinar un numero y un tablero de posicione spara las personas que adivinan un numero con la menor cantidad de intentos posibles
