@@ -1,0 +1,9 @@
+typeof - Función para conocer el tipo de dato de una expresión.
+
+Tipos de datos Js
+- NUMBER - Para todos los tipos de números. Enteros y decimales.
+
+- String - Cadena de texto
+
+No existe tipo de dato caracter 
+
