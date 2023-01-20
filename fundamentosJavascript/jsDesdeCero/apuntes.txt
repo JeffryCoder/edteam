@@ -7,3 +7,6 @@ Tipos de datos Js
 
 No existe tipo de dato caracter 
 
+
+Usar formato SNAKE_CASE cara declarar constantes 
+

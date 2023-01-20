@@ -1,5 +1,3 @@
-
-
 /**
  * Tipos de datos - Colección de datos
  */
@@ -17,9 +15,7 @@
 
 console.log( ["Cleudy", "Jeffry", "Nelson", "Vladimir", "Anderson", "Diego"])
 
-
 // Objetos JAVASCRIPT
-
 console.log({
     nombre: "Jeffry",
     apellido: "Sanchez"
