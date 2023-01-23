@@ -31,3 +31,5 @@ let respuesta2 = (a - b)
 
 console.log(`El resultado de "a" es: ${respuesta1} y el resultado de "b" es ${respuesta2}`)
 
+
+// Recordar investigar sobre TypeCoertion
