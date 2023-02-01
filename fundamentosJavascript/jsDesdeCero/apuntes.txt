@@ -10,3 +10,8 @@ No existe tipo de dato caracter
 
 Usar formato SNAKE_CASE cara declarar constantes 
 
+
+👌PARA TENER PENDIENTE👌
+
+-- Si repetimos código en nuestro programa de manera reiterada, estamos haciendo algo mal. Lo ideal 
+Y para esto podemos desarrollar funciones.
