@@ -17,4 +17,12 @@
 // // LLamado a la funcion saludar
 // saludar(15);
 
+// function obtenerNombreCompleto (nombre, apellido)
+// {
+//     let nombreCompleto = (`${nombre} ${apellido} `)
 
+//     return nombreCompleto
+// }
+
+
+// console.log(obtenerNombreCompleto("Cleudy", "Garcia"))
