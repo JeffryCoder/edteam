@@ -27,8 +27,6 @@
 
 // console.log(obtenerNombreCompleto("Cleudy", "Garcia"))
 
-
-
 /**
  * Funciones de primera clase
  * 
@@ -49,7 +47,6 @@
  * Las funciones se escriben como constantes, porque no se deben de reasignar.
  */
 
-
 /**
  *  SCOPE DE LAS VARIABLES
  * SCOPE == ALCANCE
@@ -57,4 +54,57 @@
  * En esta clase, entenderemos el alcance de las variables. Tambien utilizando las const
  * Si utilizamos const, no podemos reasignar el valor de la variable en ningún momento 
  * del programa y esta misma toma en cuenta el scope.
+ */
+
+/**
+ * FUNCIONES DE FLECHA - Arrow Functions
+ * ==>
+ * 
+ *  Las funciones flecha se utilizan para retunar valores de una manera mas sencilla. 
+ *  Cuando no necesita mucha logica en el programa
+ */
+
+// const sumar = function(a, b){
+//     return a + b
+// } 
+
+// const restar = function (c, d){
+//     return c - d
+// }
+
+// console.log(sumar(10,10))
+// console.log(sumar(10,10))
+// console.log(restar(10,10))
+
+
+// Funcion sumar utilizando arrow function
+
+const sumar = (a, b) => a + b
+
+
+
+// Funcion para saludar usando arrow function
+
+/** 
+ * Siempre y cuando usemos un parametro, podemos obviar los parentesis
+ * 
+ * REGLA DE ORO, NO ESCRIBIR PARENTESIS CON UN SOLO PARAMETRO
+*/
+
+const saludar = nombreASaludar => console.log(`Queloqueeee ${nombreASaludar}`)
+
+saludar('Jeffry')
+saludar("Nuñe'")
+saludar('Jeffry')
+
+
+/** NOTA IMPORTANTE
+ * 
+ * TODO PROBLEMA GRANDE DEBEMOS DE PARTIRLO EN PEQUEÑAS PARTES
+ * 
+ * MIENTRAS MÁS PEQUEÑAS LAS FUNCIONES MEJOR
+ * SI CRECE MUCHO TRATEMOS DE SEPARARLA EN MAS FUNCIONES
+ * 
+ * MIENTRAS MAS ATOMICAS Y MOLECULARES MEJOR
+ * 
  */
