@@ -26,3 +26,21 @@
 
 
 // console.log(obtenerNombreCompleto("Cleudy", "Garcia"))
+
+
+
+/**
+ * Funciones de primera clase
+ * 
+ * Cuando almacenas una funcion en una variable, esa variable se comporta como una funcion.
+ * 
+ * Cuando guardamos una funcion con parentesis, estamos ejecutando la funcion. 
+ * Sin embargo, si no ponemos los parentesis, estamos guardando la funcion en una variable.
+ */
+
+/**
+ * Funciones anonimas
+ * 
+ * 
+ *  Tener pendiente la autoinvocacion de funciones	(Para declarar y ejecutar una función al mismo tiempo)
+ */
