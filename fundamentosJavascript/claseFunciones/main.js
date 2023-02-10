@@ -44,3 +44,7 @@
  * 
  *  Tener pendiente la autoinvocacion de funciones	(Para declarar y ejecutar una función al mismo tiempo)
  */
+
+/**
+ * Las funciones se escriben como constantes, porque no se deben de reasignar.
+ */
