@@ -15,3 +15,6 @@ Usar formato SNAKE_CASE cara declarar constantes
 
 -- Si repetimos código en nuestro programa de manera reiterada, estamos haciendo algo mal. Lo ideal 
 Y para esto podemos desarrollar funciones.
+
+
+Los programas son como niños, hay que enseñarles a realizar las cosas.
