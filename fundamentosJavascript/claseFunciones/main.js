@@ -48,3 +48,13 @@
 /**
  * Las funciones se escriben como constantes, porque no se deben de reasignar.
  */
+
+
+/**
+ *  SCOPE DE LAS VARIABLES
+ * SCOPE == ALCANCE
+ * 
+ * En esta clase, entenderemos el alcance de las variables. Tambien utilizando las const
+ * Si utilizamos const, no podemos reasignar el valor de la variable en ningún momento 
+ * del programa y esta misma toma en cuenta el scope.
+ */
