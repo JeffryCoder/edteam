@@ -2,22 +2,21 @@ alert("Funciona");
 
 
 
-
 /**
  * ARRAYS
  */
-
 // De esta
 let amigos = ["Juan", "Pedro", "Pablo", "Luis", "Ricardo"];
 
+console
 console.log(amigos);
+//amigos.push("Cleudy");    // Agrega un elemento al final del array
+
+//*  
+let tamañoArrayAmigos = amigos.push("Cleudy");
 
 
-
-amigos.push("Cleudy");    // Agrega un elemento al final del array
-
-console.log(amigos)
-
+console.log(tamañoArrayAmigos);
 
 
 
