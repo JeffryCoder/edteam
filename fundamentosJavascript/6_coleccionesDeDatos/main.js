@@ -8,7 +8,6 @@ alert("Funciona");
 // De esta
 let amigos = ["Juan", "Pedro", "Pablo", "Luis", "Ricardo"];
 
-console
 console.log(amigos);
 //amigos.push("Cleudy");    // Agrega un elemento al final del array
 
