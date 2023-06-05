@@ -32,3 +32,4 @@ let amigos = ["Pedro", "Juan", "Pepe", "Luis", "Carlos"];
 /***
  * Metodo slice() - Devuelve un nuevo array con los elementos seleccionados "parte a la mitad"
  */
+
