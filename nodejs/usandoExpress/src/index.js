@@ -3,13 +3,18 @@ const app = express();
 const port = 3000;
 const user = require('./routes/users');
 
-const my_middleware = (req, res, next) =>{
+const isLogged = (req, res, next) =>{
 
-    console.log('Ejecutando mi middleware');
-    next();
+    let logged = false;
+
+    if (logged){
+        next();
+    }else {
+        res.send('No puede acceder, debe loguearse')
+    }
 };
 
-app.use(my_middleware);
+app.use(isLogged);
 
 // Rutas
 
