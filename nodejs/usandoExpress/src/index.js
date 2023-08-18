@@ -1,8 +1,12 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
 const user = require('./routes/users');
+
+//settings
+
+app.set('title', 'Aplicacion hecha en Node');
+app.set('port', 3000);
 
 // Middlewares
 //const loggedMiddleware = require('./middlewares/logged')
@@ -27,6 +31,6 @@ app.get('/items', (req, res)=>{
 })
 
 
-app.listen(port, ()=>{
-    console.log('Mi aplicacion esta corriendo en el puerto ' + port)
+app.listen(app.get('port'), ()=>{
+    console.log('Mi '+ app.get('title') + ' esta corriendo en el puerto ' + app.get('port'))
 })
