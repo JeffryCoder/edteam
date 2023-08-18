@@ -1,11 +1,5 @@
 const users = [
     { id: 1, nombre: 'Jeffry', edad: 21},
-    { id: 2, nombre: 'Vladimir', edad: 29},
-    { id: 3, nombre: 'Anderson', edad: 22},
-    { id: 4, nombre: 'Cleudy', edad: 23},
-    { id: 5, nombre: 'Nelson', edad: 30},
-    { id: 6, nombre: 'Miguelito', edad: 18},
-    { id: 7, nombre: 'Shantal', edad: 30}
 ]
 
 const getUsers = (req, res)=>{
@@ -26,7 +20,12 @@ const getDeleteUser = (req, res)=>{
 
 const createUser = (req, res) => {
 
-    console.log(req.body)
+    users.push(req.body);
+    res.render('users', {users: users});
+
+    //console.log(req.body)
+
+
 
 }
 const updateUser = (req, res) => {
