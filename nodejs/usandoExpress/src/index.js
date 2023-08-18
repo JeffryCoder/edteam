@@ -8,6 +8,9 @@ const user = require('./routes/users');
 app.set('title', 'Aplicacion hecha en Node');
 app.set('port', 3000);
 
+app.set('view engine', 'ejs'); // Motor de plantilla 
+app.set('views', path.join(__dirname, 'views'))
+
 // Middlewares
 //const loggedMiddleware = require('./middlewares/logged')
 //app.use(loggedMiddleware.isLogged);
@@ -18,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res)=> {
 
-    res.send("Bienvenido al sistema");
+    res.render('index');
 
 });
 
