@@ -1,17 +1,20 @@
+const path = require('path')
+const root = path.join(__dirname, '../public')
+
 const getUsers = (req, res)=>{
-    res.send("Mostrando todos los usuarios")
+    res.sendFile('/html/users.html', {root: root })
 }
 
 const createUser = (req, res)=>{
-    res.send("Creando usuario")
+    res.sendFile('/html/create-user.html', {root: root })
 }
 
 const updateUser = (req, res)=>{
-    res.send("Modificando usuario")
+    res.sendFile('/html/update-user.html', {root: root })
 }
 
 const deleteUser = (req, res)=>{
-    res.send("Eliminando usuario")
+    res.sendFile('/html/delete-user.html', {root: root })
 }
 
 const chivoMelaPela = (req, res)=>{
