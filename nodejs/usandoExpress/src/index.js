@@ -7,6 +7,8 @@ const user = require('./routes/users');
 const loggedMiddleware = require('./middlewares/logged')
 app.use(loggedMiddleware.isLogged);
 
+app.use(express.static(__dirname+'./public'));
+
 // Rutas
 
 app.get('/', (req, res)=> {
