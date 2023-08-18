@@ -1,7 +1,7 @@
 const express = require('express');
-
 const app = express();
 const port = 3000;
+const user = require('./routes/users');
 
 
 // Rutas
@@ -12,10 +12,7 @@ app.get('/', (req, res)=> {
 
 });
 
-app.get('/users', (req, res)=>{
-
-    res.send("Accediendo a usuarios")
-})
+app.use(user);
 
 
 app.get('/items', (req, res)=>{
