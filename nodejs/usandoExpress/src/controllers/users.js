@@ -1,5 +1,11 @@
 const users = [
-    { id: 1, nombre: 'Jeffry', edad: 21},
+
+    { id: 1, nombre: 'Jeffry', edad: 19},
+    { id: 2, nombre: 'Anderson', edad: 19},
+    { id: 3, nombre: 'Shantal', edad: 19},
+    { id: 4, nombre: 'Nelson', edad: 19},
+    { id: 5, nombre: 'Nelson', edad: 19},
+
 ]
 
 const getUsers = (req, res)=>{
@@ -12,6 +18,7 @@ const getCreateUser = (req, res)=>{
 
 const getUpdateUser = (req, res)=>{
     res.render('update-user')
+    
 }
 
 const getDeleteUser = (req, res)=>{
@@ -30,7 +37,24 @@ const createUser = (req, res) => {
 }
 const updateUser = (req, res) => {
 
+    const param = req.params.id ;
 
+    //const usersToUpdate = users.find(x => x.id === param)
+
+    //console.log(usersToUpdate);
+
+    for( let i = 0; i < users.length; i++){
+
+        if (param == users[i].id){
+
+            users[i].nombre = req.body.nombre;
+            users[i].edad = req.body.edad;
+            break;
+        }
+        
+
+    }
+    res.render('users', {users: users});
 }
 const deleteUser = (req, res) => {
 
