@@ -51,13 +51,20 @@ const updateUser = (req, res) => {
             users[i].edad = req.body.edad;
             break;
         }
-        
-
     }
     res.render('users', {users: users});
 }
 const deleteUser = (req, res) => {
+    const param = req.params.id ;
+    for( let i = 0; i < users.length; i++){
 
+        if (param == users[i].id){
+
+            users.splice(i, 1)
+            break;
+        }
+    }
+    res.render('users', {users: users});
 
 }
 
