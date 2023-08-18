@@ -14,4 +14,7 @@ const deleteUser = (req, res)=>{
     res.send("Eliminando usuario")
 }
 
-module.exports = {getUsers, createUser, updateUser, deleteUser}
+const chivoMelaPela = (req, res)=>{
+    res.send("Me la pela con canela")
+}
+module.exports = {getUsers, createUser, updateUser, deleteUser, chivoMelaPela}

@@ -12,13 +12,14 @@ app.get('/', (req, res)=> {
 
 });
 
-app.use(user);
+app.use('/users',user);
 
 
 app.get('/items', (req, res)=>{
 
     res.send("Accediendo a items")
 })
+
 
 app.listen(port, ()=>{
     console.log('Mi aplicacion esta corriendo en el puerto ' + port)
