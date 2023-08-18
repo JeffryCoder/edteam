@@ -26,7 +26,8 @@ const getDeleteUser = (req, res)=>{
 
 const createUser = (req, res) => {
 
-    
+    console.log(req.body)
+
 }
 const updateUser = (req, res) => {
 
@@ -37,4 +38,4 @@ const deleteUser = (req, res) => {
 
 }
 
-module.exports = {getUsers, getCreateUser, getUpdateUser, getDeleteUser}
+module.exports = {getUsers, getCreateUser, getUpdateUser, getDeleteUser, createUser, updateUser, deleteUser}
