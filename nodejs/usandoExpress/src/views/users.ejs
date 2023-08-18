@@ -7,5 +7,21 @@
 </head>
 <body>
     <h1>Listar usuarios</h1>
+
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Edad</td>
+        </tr>
+
+        <% users.forEach((user) => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.nombre %></td>
+                <td><%= user.edad %></td>
+            </tr>
+        <% }) %>
+    </table>
 </body>
 </html>
