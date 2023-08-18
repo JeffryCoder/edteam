@@ -3,6 +3,13 @@ const app = express();
 const port = 3000;
 const user = require('./routes/users');
 
+const my_middleware = (req, res, next) =>{
+
+    console.log('Ejecutando mi middleware');
+    next();
+};
+
+app.use(my_middleware);
 
 // Rutas
 
