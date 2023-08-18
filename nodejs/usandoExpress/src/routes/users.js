@@ -1,24 +1,10 @@
 const express = require('express')
 const router = express.Router()
+const userController = require('../controllers/users')
 
-router.get('/users', (req, res)=>{
-
-    res.send("Mostrando todos los usuarios")
-})
-
-router.get('/create', (req, res)=>{
-
-    res.send("Creando usuario")
-})
-
-router.get('/update', (req, res)=>{
-
-    res.send("Modificando usuario")
-})
-
-router.get('/delete', (req, res)=>{
-
-    res.send("Eliminando usuario")
-})
+router.get('/users', userController.getUsers)
+router.get('/create', userController.createUser)
+router.get('/update', userController.updateUser)
+router.get('/delete', userController.deleteUser)
 
 module.exports = router
