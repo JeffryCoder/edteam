@@ -3,18 +3,9 @@ const app = express();
 const port = 3000;
 const user = require('./routes/users');
 
-const isLogged = (req, res, next) =>{
-
-    let logged = false;
-
-    if (logged){
-        next();
-    }else {
-        res.send('No puede acceder, debe loguearse')
-    }
-};
-
-app.use(isLogged);
+// Middlewares
+const loggedMiddleware = require('./middlewares/logged')
+app.use(loggedMiddleware.isLogged);
 
 // Rutas
 
