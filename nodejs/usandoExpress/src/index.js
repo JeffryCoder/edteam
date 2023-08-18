@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const connection = require('./connection');
 const app = express();
 const user = require('./routes/users');
 
