@@ -1,23 +1,19 @@
-const path = require('path')
-const root = path.join(__dirname, '../public')
+
 
 const getUsers = (req, res)=>{
-    res.sendFile('/html/users.html', {root: root })
+    res.render('users')
 }
 
 const createUser = (req, res)=>{
-    res.sendFile('/html/create-user.html', {root: root })
+    res.render('create-user')
 }
 
 const updateUser = (req, res)=>{
-    res.sendFile('/html/update-user.html', {root: root })
+    res.render('update-user')
 }
 
 const deleteUser = (req, res)=>{
-    res.sendFile('/html/delete-user.html', {root: root })
+    res.render('delete-user')
 }
 
-const chivoMelaPela = (req, res)=>{
-    res.send("Me la pela con canela")
-}
-module.exports = {getUsers, createUser, updateUser, deleteUser, chivoMelaPela}
+module.exports = {getUsers, createUser, updateUser, deleteUser}
