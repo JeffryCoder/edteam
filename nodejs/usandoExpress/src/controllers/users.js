@@ -42,7 +42,17 @@ const getUpdateUser = (req, res)=>{
 }
 
 const getDeleteUser = (req, res)=>{
-    res.render('delete-user')
+    const param = req.params.id
+    const sql = 'select * from users where id=?'
+
+    connection.query(sql, param, (err, result)=> {
+        if (err){
+            console.log("Ha ocurrido un error modificando el usuario. " + err)
+        }else{
+            console.log(result)
+            res.render('delete-user', {user:result})
+        }
+    })
 }
 
 const createUser = (req, res) => {
@@ -90,16 +100,22 @@ const updateUser = (req, res) => {
     //res.render('users', {users: users});
 }
 const deleteUser = (req, res) => {
-    const param = req.params.id ;
-    for( let i = 0; i < users.length; i++){
+    
+    const param = req.params.id
 
-        if (param == users[i].id){
+    const sql = `delete from users where id = ${param}`
 
-            users.splice(i, 1)
-            break;
+    connection.query(sql, (err, result)=>{
+
+        if (err){
+            console.log('Ha ocurrido un error al actualizar el usuario en la base de datos')
+        }else{
+            console.log('Usuario actualizado correctamente')
+            res.redirect('/users/all')
         }
-    }
-    res.render('users', {users: users});
+
+    })
+
 
 }
 
