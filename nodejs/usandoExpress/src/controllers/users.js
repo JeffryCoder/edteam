@@ -32,8 +32,8 @@ const getDeleteUser = (req, res)=>{
 
 const createUser = (req, res) => {
 
-    users.push(req.body);
-    res.render('users', {users: users});
+    console.log(req.body)
+    //res.render('users', {users: users});
 
     //console.log(req.body)
 
