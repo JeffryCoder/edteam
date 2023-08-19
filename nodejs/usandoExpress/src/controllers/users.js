@@ -1,15 +1,20 @@
-const users = [
+const connection = require('../connection')
 
-    { id: 1, nombre: 'Jeffry', edad: 19},
-    { id: 2, nombre: 'Anderson', edad: 19},
-    { id: 3, nombre: 'Shantal', edad: 19},
-    { id: 4, nombre: 'Nelson', edad: 19},
-    { id: 5, nombre: 'Nelson', edad: 19},
-
-]
 
 const getUsers = (req, res)=>{
-    res.render('users', {users: users})
+
+    const sql = 'select * from users'
+    connection.query(sql, (err, result) => {
+
+        if (err){
+            console.log('Ha ocurrido un error obteniendo usuarios de la base de datos')
+
+        }else {
+            console.log(result)
+            res.render('users', {users: result})
+        }
+    })
+    
 }
 
 const getCreateUser = (req, res)=>{
