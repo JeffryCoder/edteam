@@ -22,7 +22,22 @@ const getCreateUser = (req, res)=>{
 }
 
 const getUpdateUser = (req, res)=>{
-    res.render('update-user')
+    const param = req.params.id
+    const sql = 'select * from users where id=?'
+
+    connection.query(sql, param, (err, result)=> {
+        if (err){
+            console.log("Ha ocurrido un error modificando el usuario. " + err)
+        }else{
+            console.log(result)
+            res.render('update-user', {user:result})
+        }
+    })
+    // busqueda en db con los datos obtenidos
+
+
+    //console.log(param);
+    
     
 }
 
