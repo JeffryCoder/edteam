@@ -110,7 +110,7 @@ const deleteUser = (req, res) => {
         if (err){
             console.log('Ha ocurrido un error al actualizar el usuario en la base de datos')
         }else{
-            console.log('Usuario actualizado correctamente')
+            console.log('Usuario eliminado correctamente')
             res.redirect('/users/all')
         }
 
