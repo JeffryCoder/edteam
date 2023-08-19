@@ -32,7 +32,19 @@ const getDeleteUser = (req, res)=>{
 
 const createUser = (req, res) => {
 
-    console.log(req.body)
+    const sql = 'insert into users SET ?'
+    const data = req.body
+    connection.query(sql, data, (err,result) => {
+        
+        if (err){
+            console.log('Ha ocurrido un error al registrar usuario')
+        }else{
+            console.log('Usuario registrado')
+
+            res.redirect('/users/all')
+        }
+    })
+    //console.log(req.body)
     //res.render('users', {users: users});
 
     //console.log(req.body)
