@@ -1,8 +1,12 @@
 module.exports = {
-    mysql_database:{
-        host: 'localhost',
-        user: 'root',
-        password: '533379Jasf.Siglo21',
-        database: 'mydb'
+    
+    mongodb: {
+
+        host: '0.0.0.0',
+        user: '',
+        password: '',
+        database: 'mydb',
+        port: 27017
+
     }
 }
