@@ -69,22 +69,25 @@ const createUser = (req, res) => {
 }
 const updateUser = (req, res) => {
 
-    const param = req.params.id ;
+    const param = req.params.id
 
-    //const usersToUpdate = users.find(x => x.id === param)
+    const sql = `update users SET name='${req.body.name}', age= ${req.body.age} where id=${param}`
 
-    //console.log(usersToUpdate);
+    connection.query(sql, (err, result)=>{
 
-    for( let i = 0; i < users.length; i++){
-
-        if (param == users[i].id){
-
-            users[i].nombre = req.body.nombre;
-            users[i].edad = req.body.edad;
-            break;
+        if (err){
+            console.log('Ha ocurrido un error al actualizar el usuario en la base de datos')
+        }else{
+            console.log('Usuario actualizado correctamente')
+            res.redirect('/users/all')
         }
-    }
-    res.render('users', {users: users});
+
+    })
+    //console.log(param)
+    
+
+
+    //res.render('users', {users: users});
 }
 const deleteUser = (req, res) => {
     const param = req.params.id ;
