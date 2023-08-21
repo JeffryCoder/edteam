@@ -7,12 +7,14 @@ const User = require('../models/users')
 const getAdmin = async (req,res) => {
 
     try{
-        
-        res.send('Hola admin')
+        const decoded = jwt.verify(req.token, 'claveSecretaJeffry')
+
+    
+        res.json({message: 'Datos de administrador correcto', userData: decoded})
 
     }catch(err){
 
-        res.send('Ha ocurrido un error')
+        res.send('Ha ocurrido un error al validar el usuario')
 
     }
 
@@ -61,12 +63,13 @@ const register = async  (req,res) => {
 
         res.json(user)
         console.log(user)
+        console.log('Usuario registrado correctamente')
         
     
     }catch(err){
         console.error(err)
 
-        res.status(500).json({message: 'Ha ocurrido un error'})
+        res.status(500).json({message: 'Ha ocurrido un error registrando al usuario'})
     }
 
 }

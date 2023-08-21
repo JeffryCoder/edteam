@@ -7,11 +7,17 @@ const verifyToken = (req, res, next) => {
 
     if (authorization_header !== undefined){
         console.log(authorization_header)
+
+        const token = authorization_header.split(' ')[1]
+        req.token = token
+        next()
+
     }else{
         console.log('No hay token')
+        console.log('Sin token no hay acceso papi')
     }
+
     
-    next()
 
 }
 
