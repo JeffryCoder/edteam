@@ -12,11 +12,17 @@ app.set('port', 3000);
 app.set('view engine', 'ejs'); // Motor de plantilla 
 app.set('views', path.join(__dirname, 'views'))
 
+
 // Middlewares
 //const loggedMiddleware = require('./middlewares/logged')
 //app.use(loggedMiddleware.isLogged);
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/users/css/styles.css', (req, res) => {
+    res.header('Content-Type', 'text/css');
+    res.sendFile(path.join(__dirname, 'public', 'css', 'styles.css'));
+  });
 
 app.use(express.urlencoded({extended:false}))
 
