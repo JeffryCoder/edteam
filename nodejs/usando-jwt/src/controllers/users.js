@@ -4,9 +4,19 @@ const bcrypt = require('bcrypt')
 const User = require('../models/users')
 
 
-const getAdmin = (req,res) => {
+const getAdmin = async (req,res) => {
 
-    
+    try{
+        
+        res.send('Hola admin')
+
+    }catch(err){
+
+        res.send('Ha ocurrido un error')
+
+    }
+
+
 }
 const login = async (req,res) => {
 
@@ -16,7 +26,14 @@ const login = async (req,res) => {
           
 
           if (bcrypt.compareSync(req.body.password, result.password)){
-            res.send('Usuario encontrado. Password correcto');
+            //res.send('Usuario encontrado. Password correcto');
+
+            // Creacion de tokens
+
+            jwt.sign({user:result}, 'claveSecretaJeffry', (err, token)=>{
+                res.send({token:token})
+            })
+
           }else{
             res.send('Usuario encontrado. Password incorrecto');
           }
