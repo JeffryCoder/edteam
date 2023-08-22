@@ -11,7 +11,11 @@ module.exports = (io) => {
             
         }
 
-
+        socket.on('delete', () => {
+                
+                data = []
+                io.emit('show_drawing', null)
+        })
 
 
         socket.on('drawing', (drawing) => {

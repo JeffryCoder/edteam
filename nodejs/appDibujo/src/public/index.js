@@ -45,6 +45,11 @@ function change_color(c){
 
 }
 
+function delete_all(){
+
+    socket.emit('delete')
+}
+
 
 
 function create_drawing(){
@@ -72,12 +77,22 @@ function create_drawing(){
 
 socket.on('show_drawing', (drawing)=>{
 
-    context.beginPath()
-    context.lineWidth = 3
-    context.strokeStyle = drawing.color
-    context.moveTo(drawing.x_position, drawing.y_position)
-    context.lineTo(drawing.previus_position.x_position, drawing.previus_position.y_position)
-    context.stroke()
+    if (drawing != null) {
+
+        context.beginPath()
+        context.lineWidth = 3
+        context.strokeStyle = drawing.color
+        context.moveTo(drawing.x_position, drawing.y_position)
+        context.lineTo(drawing.previus_position.x_position, drawing.previus_position.y_position)
+        context.stroke()
+
+    }else{
+
+        context.clearRect(0, 0, canvas.width, canvas.height)
+    }
+
+
+    
 
 })
     
