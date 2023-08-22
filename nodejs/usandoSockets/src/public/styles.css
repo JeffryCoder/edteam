@@ -2,3 +2,13 @@ body {
 
     background-color: aqua;
 }
+
+#chat {
+
+    margin: 0 auto;
+    width: 300px;
+}
+
+#write_message{
+    padding: 20px;
+}
