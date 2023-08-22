@@ -37,6 +37,15 @@ canvas.addEventListener('mousemove', (event)=>{
 
 })
 
+function change_color(c){
+
+    color = c
+    context.strokeStyle = color
+    context.stroke()
+
+}
+
+
 
 function create_drawing(){
 
