@@ -13,7 +13,7 @@ write_message.addEventListener('keyup', (event) => {
         
         if (username.value != '' && write_message.value != '') {
             
-            if(  write_message.value != `\n`){
+            if(  write_message.value != `\n` && write_message.value[0] != ` `){
                 socket.emit('message', {
                     username: username.value, 
                     message: write_message.value.slice(0, -1)
