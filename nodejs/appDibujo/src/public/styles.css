@@ -77,3 +77,12 @@ canvas{
     border-color: black;
     color: red;
 }
+
+#users{
+    position: absolute;
+    top: 5px;
+    padding: 10px;
+    margin-left: 80%;
+    font-size: 20px;
+    color: green;
+}

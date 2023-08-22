@@ -2,6 +2,7 @@ module.exports = (io) => {
     console.log('Socket.io esta listo para usarse')
 
     var data = []
+    var users = 0
 
     io.on('connection', (socket) => {
 
@@ -10,6 +11,10 @@ module.exports = (io) => {
             io.emit('show_drawing', data[i])
             
         }
+
+        users = users + 1
+
+        io.emit('users', users)
 
         socket.on('delete', () => {
                 
@@ -22,6 +27,14 @@ module.exports = (io) => {
 
             data.push(drawing)
             io.emit('show_drawing', drawing)
+
+        })
+
+        socket.on('disconnect', () => {
+
+
+            users = users - 1
+            io.emit('users', users)
 
         })
 
