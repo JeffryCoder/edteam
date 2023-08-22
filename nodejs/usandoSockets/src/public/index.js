@@ -16,10 +16,24 @@ write_message.addEventListener('keyup', (event) => {
                 message: write_message.value.slice(0, -1)
             })
 
+            write_message.value = ''
+
 
         }else{
             console.log("No se puede enviar el mensaje, verifique los campos")
         }
 
     }
+})
+
+
+socket.on('messages', (messages) => {
+
+    for (let i = 0; i < messages.length; i++) {
+        console.log(messages[i])
+        
+    }
+
+
+
 })
