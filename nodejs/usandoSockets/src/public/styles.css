@@ -12,3 +12,23 @@ body {
 #write_message{
     padding: 20px;
 }
+
+#all_messages {
+    padding: 20px;
+    height: 300px;
+    overflow: auto;
+    background-color: white;
+}
+
+#message {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    background-color: aqua;
+    color: black;
+    margin-top: 12px;
+    display: inline-block;
+    margin-left: auto;
+}
