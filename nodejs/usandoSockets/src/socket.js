@@ -7,7 +7,7 @@ module.exports = (io) => {
 
     io.on('connection', (socket) => {
         console.log('Un usuario se ha conectado')
-
+        io.emit('messages', messages)
 
         socket.on('message', (data) => {
 
