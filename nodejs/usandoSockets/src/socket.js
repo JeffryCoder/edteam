@@ -12,6 +12,13 @@ module.exports = (io) => {
 
         socket.broadcast.emit('new_user', 'Se ha conectado un nuevo usuario')
 
+        socket.on('writing', (username) => {
+
+            socket.broadcast.emit('writing', username)
+
+
+        })
+
         socket.on('message', (data) => {
 
             messages.push(data)
