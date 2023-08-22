@@ -4,6 +4,7 @@ const username = document.getElementById('username')
 const write_message = document.getElementById('write_message')
 
 const all_messages = document.getElementById('all_messages')
+const new_user = document.getElementById('new_user')
 
 
 write_message.addEventListener('keyup', (event) => {
@@ -35,6 +36,20 @@ write_message.addEventListener('keyup', (event) => {
     }
 })
 
+
+socket.on('new_user', (message) => {
+
+    console.log(message)
+
+    new_user.innerHTML = message
+
+    // Mensaje de broadcast de conexion nuevo usuaruio
+    setTimeout(() => {
+
+        new_user.innerHTML = ''
+
+    }, 3000)
+})
 
 socket.on('messages', (messages) => {
 

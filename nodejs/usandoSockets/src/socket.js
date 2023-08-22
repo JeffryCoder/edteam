@@ -9,6 +9,9 @@ module.exports = (io) => {
         console.log('Un usuario se ha conectado')
         io.emit('messages', messages)
 
+
+        socket.broadcast.emit('new_user', 'Se ha conectado un nuevo usuario')
+
         socket.on('message', (data) => {
 
             messages.push(data)
