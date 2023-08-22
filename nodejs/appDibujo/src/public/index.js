@@ -49,7 +49,8 @@ function create_drawing(){
             color:color,
             previus_position: previus_position
         }
-        show_drawing(drawing)
+        
+        socket.emit('drawing', drawing)
     
     }
 
@@ -58,16 +59,20 @@ function create_drawing(){
 
 }
 
-function show_drawing(drawing){
+
+
+socket.on('show_drawing', (drawing)=>{
 
     context.beginPath()
-
     context.lineWidth = 3
     context.strokeStyle = drawing.color
     context.moveTo(drawing.x_position, drawing.y_position)
     context.lineTo(drawing.previus_position.x_position, drawing.previus_position.y_position)
     context.stroke()
 
-}
+})
+    
+
+
 
 create_drawing()
