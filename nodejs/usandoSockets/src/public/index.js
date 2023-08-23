@@ -11,7 +11,7 @@ const writing = document.getElementById('writing')
 write_message.addEventListener('keyup', (event) => {
 
 
-    if (event.code == 'Enter') {
+    if (event.code == 'Enter' || event.keyCode === 13) {
         
         if (username.value != '' && write_message.value != '') {
             
