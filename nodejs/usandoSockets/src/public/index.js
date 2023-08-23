@@ -7,6 +7,34 @@ const all_messages = document.getElementById('all_messages')
 const new_user = document.getElementById('new_user')
 const writing = document.getElementById('writing')
 
+const send_message = document.getElementById('btn_send_message')
+
+
+send_message.addEventListener('click', () => {
+
+    if (username.value != '' && write_message.value != '') {
+            
+        if(  write_message.value != `\n` && write_message.value[0] != ` ` && write_message.value[0] != `\n`){
+            socket.emit('message', {
+                username: username.value, 
+                message: write_message.value.slice(0, -1)
+            })
+
+            
+        }else{
+            console.log("Debe de enviar un mensaje valido")
+        }
+        
+
+        write_message.value = ''
+
+
+    }else{
+        console.log("No se puede enviar el mensaje, verifique los campos")
+    }
+
+})
+
 
 write_message.addEventListener('keyup', (event) => {
 
