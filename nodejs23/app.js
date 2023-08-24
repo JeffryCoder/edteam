@@ -10,7 +10,7 @@ app.get('/', (req, res)=>{
 
 
 })
-
+app.use(express.json())
 app.use('/users', userRouter)
 
 app.listen(3000, ()=>{
