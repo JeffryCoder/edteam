@@ -2,6 +2,8 @@ const express = require('express')
 
 const app = express()
 
+const morgan = require('morgan')
+
 const userRouter = require('./routers/userRouter')
 
 app.get('/', (req, res)=>{
@@ -11,6 +13,7 @@ app.get('/', (req, res)=>{
 
 })
 app.use(express.json())
+app.use(morgan('dev'))
 app.use('/users', userRouter)
 
 app.listen(3000, ()=>{
