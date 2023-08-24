@@ -1,12 +1,19 @@
 // Requerir modulo para instalar el servidor http
 const http = require('http')
 
+const url = require('url')
+
 //Crear el servidor 
 
 // Todo lo que se envie en @res@ sera enviado al cliente
 const server = http.createServer((req, res) =>{
 
     try {
+
+        const parsedURL = url.parse(req.url, true)
+
+
+        const { name } = parsedURL.query
         
         if (req.url == '/' && req.method == "GET"){
 
@@ -18,9 +25,19 @@ const server = http.createServer((req, res) =>{
         else if (req.url == '/home' && req.method == "GET"){
     
             res.statusCode = 300
-            res.end(JSON.stringify({"message" : "Accediento al directorio principal"}))
+            res.end(JSON.stringify({"message" : "Accediendo al directorio principal"}))
     
         }
+
+        else if (parsedURL.pathname === "/profile" && name){
+
+            res.statusCode = 200
+            res.end(JSON.stringify({"message" : "Accediendo a ruta con parametro:"+name}))
+
+        }
+
+
+
     
         else{
     
