@@ -36,11 +36,30 @@ const server = http.createServer((req, res) =>{
 
         }
 
+        else if (req.url == '/register' && req.method =="POST"){
+
+            let body = ''
+
+            req.on('data', (data)=>{
+                body += data
+            })
 
 
-    
+            req.on('end', ()=>{
+
+                const parsedData = JSON.parse(body)
+                const { username, email } = parsedData
+                console.log(username, email)
+
+                res.statusCode = 201
+                res.end(JSON.stringify({"message" : "Datos registrados correctamente..."}))
+        
+
+            })
+        }
+
         else{
-    
+            //console.log(req.url)
             res.statusCode = 404
             res.end(JSON.stringify({"message" : "No encontrado. Esta ruta no existe palomo"}))
     
