@@ -4,16 +4,30 @@ const app = express()
 
 const morgan = require('morgan')
 
+const path = require('path')
+
 const userRouter = require('./routers/userRouter')
 
 const userLogged = require('./middlewares/userLogged')
 
 app.get('/', (req, res)=>{
 
-    console.log("Servidor creado con express corriendo correctamente")
+
+    const data = {
+        "title": "JeffryCoder",
+        "message": "Bienvenido a mi sitio web",
+        "showMessage": true,
+        "administradores": ['Jeffry', 'Juan', 'Pedro', 'Maria', 'Jose', 'Luis', 'Carlos', 'Jorge', 'Raul', 'Ricardo', 'Rosa', 'Luisa', 'Ana', 'Lorena']
+    }
+
+
+    res.render('index', data)
 
 
 })
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+
 app.use(express.json())
 app.use(morgan('dev'))
 // CODIGO PARA INCLUIR MIDDLEWARE DE LOGUEO AL SISTEMA
