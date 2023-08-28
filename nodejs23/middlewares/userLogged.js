@@ -1,6 +1,6 @@
 const userLogged = (req, res, next)=>{
 
-    let isLogged = false;
+    let isLogged = true;
 
     if (!isLogged){
         return res.status(401).json({'message': "Usuario no logueado"})

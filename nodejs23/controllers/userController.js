@@ -2,16 +2,35 @@ const UserService = require('../services/userServices')
 
 const userService = new UserService()
 
-exports.getAllUsers = (req, res)=>{
+exports.getAllUsers = async (req, res)=>{
 
-    res.status(200).send("Accediendo a todos los usuarios")
+    const users =  await userService.getAll()
+    res.status(200).json(users)
 }
 
-exports.getUser = (req, res)=>{
+exports.getUser = async (req, res)=>{
 
-    // Parametros de ruta y parametros Query
-    //console.log(req.query.enabled)
-    res.send("Accediendo al usuario con id "+ req.params.id)
+
+    try {
+        const id = req.params.id
+
+        const user = await userService.filterById(id)
+
+        
+        // Parametros de ruta y parametros Query
+        //console.log(req.query.enabled)
+        res.status(200).json(user)
+    } catch (error) {
+        
+        return res.status(404).json({"message": "Usuario no encontrado"})
+
+    }
+    
+
+    
+
+
+    
 
     
 }
