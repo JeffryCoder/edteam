@@ -6,6 +6,8 @@ const morgan = require('morgan')
 
 const userRouter = require('./routers/userRouter')
 
+const userLogged = require('./middlewares/userLogged')
+
 app.get('/', (req, res)=>{
 
     console.log("Servidor creado con express corriendo correctamente")

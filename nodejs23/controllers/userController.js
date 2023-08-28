@@ -18,7 +18,7 @@ exports.createUser = (req, res) =>{
 
     try {
         let data = req.body
-        console.log(name)
+        
 
         const {name, lastname, email, phone} = data
 
