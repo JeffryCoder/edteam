@@ -1,3 +1,7 @@
+const UserService = require('../services/userServices')
+
+const userService = new UserService()
+
 exports.getAllUsers = (req, res)=>{
 
     res.status(200).send("Accediendo a todos los usuarios")
@@ -12,7 +16,7 @@ exports.getUser = (req, res)=>{
     
 }
 
-exports.createUser = (req, res) =>{
+exports.createUser = async (req, res) =>{
 
 
 
@@ -20,9 +24,10 @@ exports.createUser = (req, res) =>{
         let data = req.body
         
 
-        const {name, lastname, email, phone} = data
+        await userService.create(data)
 
-        console.log(name, lastname, email, phone)
+
+
 
         res.status(201).send("Usuario registrado")
 
