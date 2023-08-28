@@ -16,6 +16,8 @@ app.get('/', (req, res)=>{
 })
 app.use(express.json())
 app.use(morgan('dev'))
+// CODIGO PARA INCLUIR MIDDLEWARE DE LOGUEO AL SISTEMA
+// app.use(userLogged)
 app.use('/users', userRouter)
 
 app.listen(3000, ()=>{

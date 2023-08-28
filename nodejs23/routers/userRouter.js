@@ -4,7 +4,9 @@ const router = express.Router()
 
 const userController = require('../controllers/userController')
 
-router.get('/', userController.getAllUsers)
+const userLogged = require('../middlewares/userLogged')
+
+router.get('/', userLogged, userController.getAllUsers)
 
 router.get('/:id', userController.getUser)
 
