@@ -10,6 +10,8 @@ const userRouter = require('./routers/userRouter')
 
 const userLogged = require('./middlewares/userLogged')
 
+const connection = require('./database/connection')
+
 app.get('/', (req, res)=>{
 
 
