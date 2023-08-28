@@ -60,20 +60,45 @@ exports.createUser = async (req, res) =>{
 
     
 }
-exports.updateUser = (req, res) =>{
+exports.updateUser = async (req, res) =>{
 
     let data = req.body
 
-    const {name, lastname, email, phone} = data
-    console.log(req.params.id)
-    console.log(name, lastname, email, phone)
+    try {
+        const id = req.params.id
 
-    res.status(200).send("Usuario modificado")
+        const user = await userService.filterById(id)
+
+        await userService.update(id, data)
+        // Parametros de ruta y parametros Query
+        //console.log(req.query.enabled)
+        res.status(200).send("Usuario modificado")
+    } catch (error) {
+        
+        return res.status(404).json({"message": "Usuario no encontrado"})
+
+    }
+
+    
     
 }
-exports.deleteUser = (req, res) =>{
+exports.deleteUser = async (req, res) =>{
 
 
-    console.log(req.params.id)
-    res.status(200).send("Usuario eliminado")
+    try {
+        const id = req.params.id
+
+        const user = await userService.filterById(id)
+
+        await userService.delete(id)
+        // Parametros de ruta y parametros Query
+        //console.log(req.query.enabled)
+        
+        res.status(200).send("Usuario eliminado")
+    } catch (error) {
+    
+        return res.status(404).json({"message": "Usuario no encontrado"})
+
+    }
+
 }

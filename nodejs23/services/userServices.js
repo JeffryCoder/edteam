@@ -33,6 +33,20 @@ class UserService{
     }
 
 
+    async update(id, data){
+
+        return await User.findByIdAndUpdate({_id: id}, data)
+
+
+    }
+
+
+    async delete(id){
+
+        return await User.deleteOne({_id: id})
+    }
+
+
 }
 
 module.exports = UserService
