@@ -10,6 +10,8 @@ const userRouter = require('./routers/userRouter')
 
 const authRouter = require('./routers/authRouter')
 
+const dashboardRouter = require('./routers/dashboardRouter')
+
 const userLogged = require('./middlewares/userLogged')
 
 const connection = require('./database/connection')
@@ -40,6 +42,8 @@ app.use(morgan('dev'))
 app.use('/users', userRouter)
 
 app.use('/auth', authRouter)
+
+app.use('/dashboard', dashboardRouter)
 
 app.listen(3000, ()=>{
 
