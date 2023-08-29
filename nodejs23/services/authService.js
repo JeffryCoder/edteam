@@ -2,6 +2,8 @@ const UserAuth = require('../models/authModel')
 
 const bcrypt = require('bcrypt')
 
+const jwt = require('jsonwebtoken')
+
 
 
 
@@ -18,9 +20,17 @@ class AuthService {
         return await userAuth.save()
     }
 
-    login(){
+    async filterByEmail(email){
 
+        const userAuth = await UserAuth.findOne({email})	
+        return userAuth
 
+    }
+
+    generateToken(payload){
+
+        const token = jwt.sign(payload, 'miClaveSecretaJeffryCoder')
+        return token
     }
 
 }
