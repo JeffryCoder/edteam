@@ -1,4 +1,3 @@
-const { getAllUsers } = require('../controllers/userController');
 const User = require('../models/userModel');
 
 class UserService{

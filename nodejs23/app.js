@@ -8,9 +8,12 @@ const path = require('path')
 
 const userRouter = require('./routers/userRouter')
 
+const authRouter = require('./routers/authRouter')
+
 const userLogged = require('./middlewares/userLogged')
 
 const connection = require('./database/connection')
+
 
 app.get('/', (req, res)=>{
 
@@ -35,6 +38,8 @@ app.use(morgan('dev'))
 // CODIGO PARA INCLUIR MIDDLEWARE DE LOGUEO AL SISTEMA
 // app.use(userLogged)
 app.use('/users', userRouter)
+
+app.use('/auth', authRouter)
 
 app.listen(3000, ()=>{
 
