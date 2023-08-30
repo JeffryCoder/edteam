@@ -1,24 +1,24 @@
 module.exports = (io)=> {
 
-    io.on('connection', (socket)=>{
+    // io.on('connection', (socket)=>{
 
-        console.log("Se ha conectado un nuevo cliente en el servidor")
+    //     console.log("Se ha conectado un nuevo cliente en el servidor")
 
-        socket.on('add-information', (data)=>{
+    //     socket.on('add-information', (data)=>{
 
-            console.log(data.info)
+    //         console.log(data.info)
 
 
-            io.emit('show-information', data)
-        })
+    //         io.emit('show-information', data)
+    //     })
 
-        socket.broadcast.emit('new-connection', 'Nuevo cliente conectado')
+    //     socket.broadcast.emit('new-connection', 'Nuevo cliente conectado')
         
-        socket.on('disconnect', ()=>{
+    //     socket.on('disconnect', ()=>{
 
 
-            console.log('Se ha desconectado un cliente del servidor')
-        })
-    })
+    //         console.log('Se ha desconectado un cliente del servidor')
+    //     })
+    // })
 
 }

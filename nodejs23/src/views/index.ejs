@@ -44,39 +44,39 @@
     <script>
         const socket = io()
 
-        const info = document.getElementById('info')
+        // const info = document.getElementById('info')
 
-        const btnEmitEvent = document.getElementById('btn-emit-event')
+        // const btnEmitEvent = document.getElementById('btn-emit-event')
 
-        const content = document.getElementById('content')
+        // const content = document.getElementById('content')
 
-        btnEmitEvent.addEventListener('click', (event) => {
+        // btnEmitEvent.addEventListener('click', (event) => {
 
-            socket.emit('add-information', {
+        //     socket.emit('add-information', {
 
-                info: info.value
-            })
-        })
+        //         info: info.value
+        //     })
+        // })
 
-        socket.on('new-connection', (msg) => {
+        // socket.on('new-connection', (msg) => {
 
-            const newConnection = document.getElementById('new-connection')
+        //     const newConnection = document.getElementById('new-connection')
 
-            newConnection.innerHTML = msg
+        //     newConnection.innerHTML = msg
 
-            setTimeout(()=>{
+        //     setTimeout(()=>{
 
-                newConnection.innerHTML = ''
+        //         newConnection.innerHTML = ''
 
 
-            }, 3000)
-        })
+        //     }, 3000)
+        // })
 
-        socket.on('show-information', (data) => {
+        // socket.on('show-information', (data) => {
 
-            console.log(data)
-            content.innerHTML = data.info
-        })
+        //     console.log(data)
+        //     content.innerHTML = data.info
+        // })
     </script>
 
 </body>
