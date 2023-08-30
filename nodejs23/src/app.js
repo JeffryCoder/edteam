@@ -8,13 +8,13 @@ const path = require('path')
 
 const socket = require('socket.io')
 
-const userRouter = require('./routers/userRouter')
+// const userRouter = require('./routers/userRouter')
 
-const authRouter = require('./routers/authRouter')
+// const authRouter = require('./routers/authRouter')
 
-const dashboardRouter = require('./routers/dashboardRouter')
+// const dashboardRouter = require('./routers/dashboardRouter')
 
-const userLogged = require('./middlewares/userLogged')
+// const userLogged = require('./middlewares/userLogged')
 
 const connection = require('./database/connection')
 
@@ -22,15 +22,15 @@ const connection = require('./database/connection')
 app.get('/', (req, res)=>{
 
 
-    const data = {
-        "title": "JeffryCoder",
-        "message": "Bienvenido a mi sitio web",
-        "showMessage": true,
-        "administradores": ['Jeffry', 'Juan', 'Pedro', 'Maria', 'Jose', 'Luis', 'Carlos', 'Jorge', 'Raul', 'Ricardo', 'Rosa', 'Luisa', 'Ana', 'Lorena']
-    }
+    // const data = {
+    //     "title": "JeffryCoder",
+    //     "message": "Bienvenido a mi sitio web",
+    //     "showMessage": true,
+    //     "administradores": ['Jeffry', 'Juan', 'Pedro', 'Maria', 'Jose', 'Luis', 'Carlos', 'Jorge', 'Raul', 'Ricardo', 'Rosa', 'Luisa', 'Ana', 'Lorena']
+    // }
 
 
-    res.render('index', data)
+    res.render('index')
 
 
 })
@@ -41,11 +41,11 @@ app.use(express.json())
 app.use(morgan('dev'))
 // CODIGO PARA INCLUIR MIDDLEWARE DE LOGUEO AL SISTEMA
 // app.use(userLogged)
-app.use('/users', userRouter)
+// app.use('/users', userRouter)
 
-app.use('/auth', authRouter)
+// app.use('/auth', authRouter)
 
-app.use('/dashboard', dashboardRouter)
+// app.use('/dashboard', dashboardRouter)
 
 const server = require('http').createServer(app)
 
