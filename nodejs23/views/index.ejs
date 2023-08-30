@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <%= title  %>
+    <!-- <%= title  %>
 
     <% if (showMessage){ %>
 
@@ -13,11 +13,11 @@
     <% } else {%>
 
         <p>Este es un mensaje por defecto co ejs</p>
-    <% } %>
+    <% } %> -->
 
 
 
-    <ul>
+    <!-- <ul>
 
     <% for (let i = 0; i < administradores.length ; i++){ %>
 
@@ -25,17 +25,59 @@
     
     <% } %>
 
-    </ul>
+    </ul> -->
 </head>
 <body>
+
+    <div id="new-connection"></div>
+
     
+    <label for="">Ingrese la informacion</label>
+    <input type="text" name="" id="info">
+    <input type="button" value="Emitir evento" id="btn-emit-event">
 
-    <body>
-        <script src="/socket.io/socket.io.js"></script>
+    <div id="content"></div>
 
-        <script>
-            const socket = io()
-        </script>
-    </body>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io()
+
+        const info = document.getElementById('info')
+
+        const btnEmitEvent = document.getElementById('btn-emit-event')
+
+        const content = document.getElementById('content')
+
+        btnEmitEvent.addEventListener('click', (event) => {
+
+            socket.emit('add-information', {
+
+                info: info.value
+            })
+        })
+
+        socket.on('new-connection', (msg) => {
+
+            const newConnection = document.getElementById('new-connection')
+
+            newConnection.innerHTML = msg
+
+            setTimeout(()=>{
+
+                newConnection.innerHTML = ''
+
+
+            }, 3000)
+        })
+
+        socket.on('show-information', (data) => {
+
+            console.log(data)
+            content.innerHTML = data.info
+        })
+    </script>
+
 </body>
 </html>
