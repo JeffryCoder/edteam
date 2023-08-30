@@ -1,4 +1,4 @@
-const {test, describe, it} = require('node:test')
+const {test, describe, it, mock} = require('node:test')
 
 const assert = require('assert')
 

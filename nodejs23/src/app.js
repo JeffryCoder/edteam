@@ -57,3 +57,6 @@ server.listen(3000, ()=>{
 
     console.log("Aplicacion ejecutandose correctamente en el puerto 3000")
 })
+
+
+module.exports = app
