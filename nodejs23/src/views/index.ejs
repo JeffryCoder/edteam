@@ -5,27 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- <%= title  %>
-
-    <% if (showMessage){ %>
-
-        <%= message %>
-    <% } else {%>
-
-        <p>Este es un mensaje por defecto co ejs</p>
-    <% } %> -->
-
-
-
-    <!-- <ul>
-
-    <% for (let i = 0; i < administradores.length ; i++){ %>
-
-       <li><%= administradores[i] %></li> 
     
-    <% } %>
-
-    </ul> -->
 </head>
 <body>
 
@@ -36,7 +16,20 @@
     <input type="text" name="" id="info">
     <input type="button" value="Emitir evento" id="btn-emit-event">
 
-    <div id="content"></div>
+    <div id="chat">
+        <input type="text" id="username" placeholder="Ingrese su nombre de usuario">
+        <div id="message">
+            <div class="message">jeffrycoder: Hola</div>
+            <div class="message">jeffrycoder: Hola</div>
+        </div>
+
+        <div id="writing">
+
+        </div>
+
+        <textarea id="write-message" placeholder="Ingrese su mensaje"></textarea>
+
+    </div>
 
 
     <script src="/socket.io/socket.io.js"></script>
