@@ -8,6 +8,9 @@ const path = require('path')
 
 const socket = require('socket.io')
 
+
+
+
 // const userRouter = require('./routers/userRouter')
 
 // const authRouter = require('./routers/authRouter')
@@ -17,6 +20,18 @@ const socket = require('socket.io')
 // const userLogged = require('./middlewares/userLogged')
 
 const connection = require('./database/connection')
+
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/styles.css', (req, res) => {
+    res.header('Content-Type', 'text/css');
+    res.sendFile(path.join(__dirname, 'public', 'css', 'styles.css'));
+  });
+
+app.use(express.urlencoded({extended:false}))
+
 
 
 app.get('/', (req, res)=>{
@@ -36,6 +51,10 @@ app.get('/', (req, res)=>{
 })
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
+
+
+
+
 
 app.use(express.json())
 app.use(morgan('dev'))
@@ -57,6 +76,9 @@ server.listen(3000, ()=>{
 
     console.log("Aplicacion ejecutandose correctamente en el puerto 3000")
 })
+
+
+
 
 
 module.exports = app
