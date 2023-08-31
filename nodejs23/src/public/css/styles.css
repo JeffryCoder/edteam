@@ -40,8 +40,8 @@
 }
 
 
-#message {
-    width: 200px;
+#messages {
+    width: 300px;
     overflow: auto;
 }
 
