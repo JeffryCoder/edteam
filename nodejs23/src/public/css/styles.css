@@ -1,3 +1,11 @@
+#appTitle {
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #23899e;
+}
+
 #username{
 
     width: 50%;
@@ -16,4 +24,34 @@
     border: 1px solid;
 
     border-radius: 4px;
+}
+
+
+#write-message{
+
+    width: 85%;
+    margin: 10px;
+    padding: 15px;
+
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#message {
+    width: 200px;
+    overflow: auto;
+}
+
+
+.message{
+    background-color: #23899e;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 0 0 10px;
+    padding: 5px;
+
+    display: inline-block;
 }
