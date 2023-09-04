@@ -30,4 +30,36 @@ router.post("/api/login", (req, res) => {
 });
 
 
+router.post("/api/users", verifyToken , (req, res) =>{
+
+    jwt.verify(req.token, secretKey, (err, data) => {
+        if (err){
+            res.sendStatus(403);
+        }else {
+            res.json({
+                mensaje: "Accediendo a usuarios por metodo post y autenticado con jwt",
+                data: data
+            });
+        }
+    });
+
+    // res.json({message: "Obteniendo todos los usuarios desde el API"})
+
+});
+
+function verifyToken(req, res, next) {
+
+    const header = req.headers["authorization"];
+
+    if (header !== undefined) {
+
+        const token = header.split(" ")[1];
+        req.token = token;
+        next();
+    }else {
+        res.sendStatus(403);
+    }
+
+}
+
 module.exports = router;
