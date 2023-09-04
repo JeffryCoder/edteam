@@ -4,6 +4,7 @@
         "CONFIGURACIONES",
         "consola",
         "CONSTANTES",
+        "contraseña",
         "corriendo",
         "crear",
         "entienda",
@@ -11,10 +12,13 @@
         "GLOBALES",
         "Hola",
         "importar",
+        "incorrectos",
+        "mensaje",
         "muestre",
         "mundo",
         "ninguno",
         "peticiones",
-        "Servidor"
+        "Servidor",
+        "Usuario"
     ]
 }
