@@ -3,29 +3,45 @@ const url = require('url');
 
 module.exports = http.createServer((req, res) => {
 
-    const apiOptions = {
-
-
-        
-
-
-
-
-    }
-
-
-
+    const apiOptions = require('./controller')
     const urlParser = url.parse(req.url, true);
+
 
 
     console.log(`Petición recibida: ${urlParser.pathname}. Método: ${req.method}`)
 
 
+    switch (req.method) {
 
 
+        case 'GET':
+            
+                if (urlParser.pathname == '/users') {
 
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({"message": "Servidor con nodejs puro funcionando correctamente..."}));
+                    apiOptions.getUsers(req, res);
+                }
+                break;
 
+
+        case 'POST':
+            if (urlParser.pathname == '/users') {
+
+                apiOptions.createUsers(req, res);
+
+            }
+                break;
+
+        case 'PUT':
+            if (urlParser.pathname == '/users') {
+
+                apiOptions.updateUsers(req, res);
+
+            }
+
+            break;
+        default:
+            return;
+
+
+    }
 });
