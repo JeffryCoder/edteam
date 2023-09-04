@@ -54,8 +54,6 @@ exports.createUsers = async (req, res) => {
 
 exports.updateUsers = async (req, res) => {
 
-
-    
     // database.push(req.body);
 
     const urlParser = url.parse(req.url, true);
@@ -72,7 +70,6 @@ exports.updateUsers = async (req, res) => {
 
         await bodyParser(req);
         database[value - 1] = req.body;
-
         let response = [
 
             {
@@ -84,7 +81,54 @@ exports.updateUsers = async (req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.end(JSON.stringify(response));
+    }else{
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({"message" : "key is wrong"}));
+    }
 
+    
+
+
+};
+
+
+
+// Borrando usuarios
+
+exports.deleteUsers = async (req, res) => {
+
+    // database.push(req.body);
+
+    const urlParser = url.parse(req.url, true);
+    // console.log(urlParser)
+
+
+    const idQuery = urlParser.path.split("?")[1];
+    const key = idQuery.split("=")[0];
+    const value = idQuery.split("=")[1];
+
+    // console.log(key, value);
+
+    if (key === "id") {
+
+
+        database.splice(value - 1, 1);
+        let response = [
+
+            {
+                "message": "Delete users"
+            },
+            database
+    
+        ];
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(response));
+    }else{
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({"message" : "key is wrong"}));
     }
 
     

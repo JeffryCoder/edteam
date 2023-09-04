@@ -39,6 +39,17 @@ module.exports = http.createServer((req, res) => {
             }
 
             break;
+
+        case 'DELETE':
+            if (urlParser.pathname == '/users') {
+
+                apiOptions.deleteUsers(req, res);
+
+            }
+
+            break;
+
+        
         default:
             return;
 
