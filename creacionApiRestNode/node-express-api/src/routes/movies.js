@@ -5,8 +5,8 @@ const router = Router();
 
 router.get("/api/movies", async (req, res) => {
 
-
-    res.json(await Movies.find());
+    const movies = await Movies.find();
+    res.json({mensaje: "Peliculas encontradas con exito", movies});
 
 
 
