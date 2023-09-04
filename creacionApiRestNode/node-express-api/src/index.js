@@ -3,6 +3,11 @@ const morgan = require("morgan"); // Para ver las peticiones en consola
 
 
 const app = express(); // Para crear el servidor
+// Base de datos
+
+require("dotenv").config(); // Para que el servidor entienda las variables de entorno
+require("./database"); // Para que el servidor entienda la base de datos
+
 
 // CONSTANTES GLOBALES
 app.set("port", process.env.PORT || 3000) // Para que el puerto sea el que nos de el servidor o el 3000 si no nos da ninguno
