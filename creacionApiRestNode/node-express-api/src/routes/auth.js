@@ -15,7 +15,7 @@ router.post("/api/login", (req, res) => {
 
     if (email === user.email && password === user.password) {
 
-        jwt.sign({user:user}, secretKey, (err, token) => {
+        jwt.sign({user:user}, secretKey, {expiresIn: "1h"} , (err, token) => {
 
 
             res.json({token:token});
