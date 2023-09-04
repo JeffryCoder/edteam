@@ -15,6 +15,7 @@ app.use(express.json()); // Para que el servidor entienda los formatos json
 //ENDPOINTS
 
 app.use(require("./routes/index")); // Para que el servidor entienda las rutas
+app.use(require("./routes/auth")); // Para que el servidor entienda de autenticacion
 
 
 // SERVIDOR
