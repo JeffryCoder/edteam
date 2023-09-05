@@ -91,6 +91,21 @@ router.put("/api/movies/:id", async (req, res) => {
 
 });  
 
+// Para eliminar peliculas 
+
+
+router.delete("/api/movies/:id", async (req, res) => {
+
+    const { id } = req.params;
+
+    Movies.findByIdAndDelete(id);
+    const movies = await Movies.find();
+
+    res.json({"mensaje":"Pelicula eliminada con exito", movies});
+
+});
+
+
 
 
 module.exports = router;
