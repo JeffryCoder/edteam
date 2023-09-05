@@ -69,7 +69,20 @@ router.post("/api/movies", async (req, res) => {
 
 
 });
+// Para actualizar peliculas por id
 
+router.put("/api/movies/:id", async (req, res) => {
+
+
+    const { id } = req.params;
+
+    await Movies.findByIdAndUpdate(id, req.body);
+    const movies = await Movies.find();
+
+    res.json({"mensaje":"Pelicula actualizada con exito", movies});
+
+
+});  
 
 
 
