@@ -74,12 +74,19 @@ router.post("/api/movies", async (req, res) => {
 router.put("/api/movies/:id", async (req, res) => {
 
 
-    const { id } = req.params;
 
-    await Movies.findByIdAndUpdate(id, req.body);
-    const movies = await Movies.find();
+    try {
+        const { id } = req.params;
 
-    res.json({"mensaje":"Pelicula actualizada con exito", movies});
+        await Movies.findByIdAndUpdate(id, req.body);
+        const movies = await Movies.find();
+
+        res.json({"mensaje":"Pelicula actualizada con exito", movies});
+    } catch (error) {
+        res.status(500).json({"mensaje":"Error al actualizar pelicula. Este ID no existe"});
+    }
+
+    
 
 
 });  
