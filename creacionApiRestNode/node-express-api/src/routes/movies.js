@@ -13,6 +13,40 @@ router.get("/api/movies", async (req, res) => {
 });
 
 
+// Para buscar peliculas por id
+
+router.get("/api/movies/:id", async (req, res) => {
+
+    
+
+    try {
+        const movie = await Movies.findById(req.params.id);
+        res.json({mensaje: "Pelicula encontrada con exito", movie});
+    } catch (error) {
+        res.json({mensaje: "Error al buscar pelicula por id", error});
+    }
+
+
+});
+
+// Para buscar peliculas por titulo
+
+
+router.get("/api/movies/title/:title", async (req, res) => {
+
+    const {title} = req.params;
+
+    try {
+        const movies = await Movies.find({title: title});
+        res.json({mensaje: "Pelicula encontrada con exito", movies})
+    } catch (error) {
+        res.json({mensaje: "Error al buscar pelicula por titulo", error});
+    }
+
+
+});
+
+
 router.post("/api/movies", async (req, res) => {
 
     try {
