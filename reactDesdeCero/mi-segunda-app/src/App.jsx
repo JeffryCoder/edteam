@@ -1,6 +1,6 @@
-import Header from "./components/Header.jsx";
+import Header from './components/Header.jsx'
 
-function App() {
+function App () {
   return (
     <>
       <Header />
@@ -8,6 +8,6 @@ function App() {
         <h1>Modulo de Registro de Miembros</h1>
       </main>
     </>
-  );
+  )
 }
-export default App;
+export default App

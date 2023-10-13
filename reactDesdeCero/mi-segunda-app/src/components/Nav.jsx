@@ -1,21 +1,21 @@
-function Nav() {
+function Nav () {
   return (
     <nav>
       <ul>
         <li>
-          <a href="/">Inicio</a>
+          <a href='/'>Inicio</a>
         </li>
         <li>
-          <a href="/registro">Registro</a>
+          <a href='/registro'>Registro</a>
         </li>
         <li>
-          <a href="/productos">Productos</a>
+          <a href='/productos'>Productos</a>
         </li>
         <li>
-          <a href="/contacto">Contactanos</a>
+          <a href='/contacto'>Contactanos</a>
         </li>
       </ul>
     </nav>
-  );
+  )
 }
-export default Nav;
+export default Nav

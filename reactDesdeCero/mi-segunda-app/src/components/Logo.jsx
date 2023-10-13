@@ -1,10 +1,10 @@
-function Logo() {
+function Logo () {
   return (
     <>
       <div>
-        <img src="logoDepartamento.src" alt="Logo Departamento" />
+        <img src='logoDepartamento.src' alt='Logo Departamento' />
       </div>
     </>
-  );
+  )
 }
-export default Logo;
+export default Logo
