@@ -1,4 +1,4 @@
-import Header from './Header.jsx'
+import Header from './components/Header.jsx'
 
 function App() {
   return (
@@ -10,5 +10,4 @@ function App() {
     </>
   )
 }
-
 export default App
