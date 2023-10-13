@@ -1,19 +1,11 @@
-import Nav from './Nav'
-
-function Header(){
-    return(
-        <header>
-            <span>
-                MENU
-            </span>
-            <div>
-                <img src="logoDepartamento.src" alt="Logo Departamento" />
-            </div>
-            <div>
-                <Nav />
-            </div>
-      </header>
-    )
+import Nav from "./Nav";
+import Logo from "./Logo";
+function Header() {
+  return (
+    <header>
+      <Logo />
+      <Nav />
+    </header>
+  );
 }
-
-export default Header
+export default Header;
