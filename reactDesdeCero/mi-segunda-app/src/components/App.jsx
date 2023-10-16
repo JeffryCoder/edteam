@@ -1,11 +1,12 @@
-import Header from './components/Header.jsx'
+import Header from './Header.jsx'
+import ListadoMiembros from './ListadoMiembros.jsx'
 
 function App () {
   return (
     <>
       <Header />
       <main>
-        <h1>Modulo de Registro de Miembros</h1>
+        <ListadoMiembros />
       </main>
     </>
   )
