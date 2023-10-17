@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import TarjetaCriptomoneda from "./components/TarjetaCriptomoneda"
 function App() {
 
   const API_URL = import.meta.env.VITE_API_URL
@@ -20,11 +21,12 @@ function App() {
   return (
     <>
       <h1>Lista de Criptomonedas</h1>
-      <ol>
-        {criptomonedas.map((criptomoneda) => {
+      
+        {/* {criptomonedas.map((criptomoneda) => {
           return <li key={criptomoneda.id}>Nombre: <br /> {criptomoneda.name} <br /> Precio: <br />{criptomoneda.priceUsd}</li>;
-        })}
-      </ol>
+        })} */}
+      <TarjetaCriptomoneda />
+      
     </>
   );
 
