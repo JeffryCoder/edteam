@@ -19,6 +19,7 @@ function App() {
 
   if (!criptomonedas) return <h1>Cargando...</h1>;
 
+  
   return (
     <>
       <h1>Lista de Criptomonedas</h1>
@@ -26,10 +27,13 @@ function App() {
         {/* {criptomonedas.map((criptomoneda) => {
           return <li key={criptomoneda.id}>Nombre: <br /> {criptomoneda.name} <br /> Precio: <br />{criptomoneda.priceUsd}</li>;
         })} */}
-
-        {criptomonedas.map((criptomoneda) => {
-          return <TarjetaCriptomoneda key={criptomoneda.id} nombreCriptomoneda={criptomoneda.name} precioCriptomoneda={criptomoneda.priceUsd} />
-        })}
+        
+        {
+          criptomonedas.map((criptomoneda) => {
+            console.log(criptomoneda)
+            return <TarjetaCriptomoneda key={criptomoneda.id} id={criptomoneda.id} nombreCriptomoneda={criptomoneda.name} precioCriptomoneda={criptomoneda.priceUsd} precioUltimas24Horas={criptomoneda.changePercent24Hr} />
+          })
+        }
       
       
     </>
