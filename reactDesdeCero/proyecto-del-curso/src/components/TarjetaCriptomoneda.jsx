@@ -7,6 +7,7 @@ function TarjetaCriptomoneda ({id, nombreCriptomoneda = 'NombreCripto', precioCr
   useEffect(()=> {
     // console.log("Se renderizó el componente TarjetaCriptomoneda")
     console.log(refTarjetaCriptomoneda)
+    console.log(precioUltimas24Horas)
     if (precioUltimas24Horas > 0){
       refTarjetaCriptomoneda.current.classList.add('bg-green-500')
     }else if(precioUltimas24Horas < 0){
