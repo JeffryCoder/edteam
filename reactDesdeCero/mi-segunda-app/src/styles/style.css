@@ -1,0 +1,5 @@
+.desactivada{
+    opacity: 0.6;
+    filter: grayscale(1);
+    filter: blur(1px);
+}
