@@ -26,7 +26,11 @@ function App() {
         {/* {criptomonedas.map((criptomoneda) => {
           return <li key={criptomoneda.id}>Nombre: <br /> {criptomoneda.name} <br /> Precio: <br />{criptomoneda.priceUsd}</li>;
         })} */}
-      <TarjetaCriptomoneda />
+
+        {criptomonedas.map((criptomoneda) => {
+          return <TarjetaCriptomoneda key={criptomoneda.id} nombreCriptomoneda={criptomoneda.name} precioCriptomoneda={criptomoneda.priceUsd} />
+        })}
+      
       
     </>
   );
