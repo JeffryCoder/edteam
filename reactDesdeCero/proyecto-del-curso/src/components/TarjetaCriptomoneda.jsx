@@ -23,6 +23,7 @@ function TarjetaCriptomoneda ({id, nombreCriptomoneda = 'NombreCripto', precioCr
         <a ref={refTarjetaCriptomoneda} href="#" className="block max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{nombreCriptomoneda}</h5>
           <p className="font-normal text-gray-700">USD${precioCriptomoneda}</p>
+          <p>Fluctuacion en las ultimas 24 horas: {(parseFloat(precioUltimas24Horas).toFixed(3))}%</p>
         </a>
       </div>
     </>
