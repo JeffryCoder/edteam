@@ -6,6 +6,7 @@ const Menu = () => {
       <ul>
         <li><NavLink to='/'>Inicio</NavLink></li>
         <li><NavLink to='/saludo'>Saludo</NavLink></li>
+        <li><NavLink to='/criptomonedas'>Criptomonedas</NavLink></li>
       </ul>
     </nav>
   )
