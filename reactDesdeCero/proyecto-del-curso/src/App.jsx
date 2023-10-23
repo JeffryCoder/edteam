@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react"
 import TarjetaCriptomoneda from "./components/TarjetaCriptomoneda"
 import './App.css'
+import axios from "axios"
+
 function App() {
 
   const API_URL = import.meta.env.VITE_API_URL
   const [criptomonedas, setCriptomonedas] = useState()
 
   useEffect(() => {
-    fetch(`${API_URL}assets`)
-      .then((resp) => resp.json())
+    axios.get(`${API_URL}assets`)
       .then((data) => { 
-        setCriptomonedas(data.data) 
+        setCriptomonedas(data.data.data) 
       })
       .catch(() => {
         console.log("La petición falló")
