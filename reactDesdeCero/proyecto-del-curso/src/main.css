@@ -3,9 +3,10 @@ html{
     /* font-family: 'Roboto', sans-serif; */
 }
 
-h1{
+h1, p{
   color: aliceblue;
 }
+
 
 footer{
   color: aliceblue;
