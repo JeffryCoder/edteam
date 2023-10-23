@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import TarjetaCriptomoneda from './components/TarjetaCriptomoneda'
+import TarjetaCriptomoneda from './TarjetaCriptomoneda'
 import './App.css'
 import axios from 'axios'
 
