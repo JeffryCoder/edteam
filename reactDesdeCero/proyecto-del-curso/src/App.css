@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.app-container{
+    max-width: 1400px;
+    padding: 2rem 0;
+    margin: auto;
+}
+.contenedorTarjetaCriptomoneda{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
