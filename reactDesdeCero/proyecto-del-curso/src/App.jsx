@@ -32,7 +32,7 @@ function App() {
   
   return (
     <div className="app-container">
-      <h1 className="text-5xl text-center m-5">Lista de Criptomonedas</h1>
+      <h1 className="text-5xl text-center m-5">Precio de Criptomonedas Actualizado</h1>
       <div className="contenedorTarjetaCriptomoneda">
         {
           criptomonedas.map((criptomoneda) => {
