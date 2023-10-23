@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Menu = () => {
   return (
     <nav>
       <ul>
-        <li><Link to='/'>Inicio</Link></li>
-        <li><Link to='/saludo'>Saludo</Link></li>
+        <li><NavLink to='/'>Inicio</NavLink></li>
+        <li><NavLink to='/saludo'>Saludo</NavLink></li>
       </ul>
     </nav>
   )
