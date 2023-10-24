@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function TarjetaCriptomoneda ({ id, nombreCriptomoneda = 'NombreCripto', precioCriptomoneda = 'PrecioCripto', precioUltimas24Horas }) {
   const refTarjetaCriptomoneda = useRef()
@@ -20,11 +21,13 @@ function TarjetaCriptomoneda ({ id, nombreCriptomoneda = 'NombreCripto', precioC
 
     <>
       <div className='car' id={id}>
-        <a ref={refTarjetaCriptomoneda} href='#' className='block max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100'>
-          <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900'>{nombreCriptomoneda}</h5>
-          <p className='font-bold'>USD${parseFloat(precioCriptomoneda).toFixed(2)}</p>
-          <p className='font-bold'>Fluctuacion en las ultimas 24 horas: {(parseFloat(precioUltimas24Horas).toFixed(2))}%</p>
-        </a>
+        <Link to={`/criptomonedas/${id}`}>
+          <a ref={refTarjetaCriptomoneda} href='#' className='block max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100'>
+            <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900'>{nombreCriptomoneda}</h5>
+            <p className='font-bold'>USD${parseFloat(precioCriptomoneda).toFixed(2)}</p>
+            <p className='font-bold'>Fluctuacion en las ultimas 24 horas: {(parseFloat(precioUltimas24Horas).toFixed(2))}%</p>
+          </a>
+        </Link>
       </div>
     </>
   )
