@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.paginaCriptoContainer{
+    max-width: 1400px;
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: hsla(271, 14%, 37%, 0.322);
+}

@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import './PaginaUnicaCriptomoneda.css'
 
 const PaginaUnicaCriptomoneda = () => {
   const API_URL = import.meta.env.VITE_API_URL
@@ -32,17 +33,19 @@ const PaginaUnicaCriptomoneda = () => {
   }
   return (
     <>
-      <div href='#' className='block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-10'>
-        <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center'>{criptomonedaBuscada.name}</h5>
-        <p className='text-normal text-gray-800'>Id: {criptomonedaBuscada.id}</p>
-        <p className='text-normal text-gray-800'>Symbol: {criptomonedaBuscada.symbol}</p>
-        <p className='text-normal text-gray-800'>Ranking:  {criptomonedaBuscada.rank}</p>
-        <p className='text-normal text-gray-800'>Supply: {criptomonedaBuscada.supply}</p>
-        <p className='text-normal text-gray-800'>Max Supply: {criptomonedaBuscada.maxSupply}</p>
-        <p className='text-normal text-gray-800'>Market Cap: {criptomonedaBuscada.marketCapUsd}</p>
-        <p className='text-normal text-gray-800'>Volumen: {criptomonedaBuscada.volumeUsd24Hr}</p>
-        <p className='text-normal text-gray-800'>Precio: {criptomonedaBuscada.priceUsd}</p>
-        <p className='text-normal text-gray-800'>Fluctuacion en las ultimas 24 horas: {parseFloat(criptomonedaBuscada.changePercent24Hr).toFixed(2)}%</p>
+      <div href='#' className='paginaCriptoContainer  bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-10 mt-10'>
+        <h5 className='mb-2 text-2xl font-bold tracking-tight text-white text-center'>{criptomonedaBuscada.name}</h5>
+        <div className='text-center text-blue-400'>
+          <p>Ranking:  {criptomonedaBuscada.rank}</p>
+          <p>Id: {criptomonedaBuscada.id}</p>
+          <p>Symbol: {criptomonedaBuscada.symbol}</p>
+          <p>Supply: USD$ {parseFloat(criptomonedaBuscada.supply).toFixed(2)}</p>
+          <p>Max Supply: USD$ {parseFloat(criptomonedaBuscada.maxSupply).toFixed(2)}</p>
+          <p>Market Cap: USD$ {criptomonedaBuscada.marketCapUsd}</p>
+          <p>Volumen: USD$ {parseFloat(criptomonedaBuscada.volumeUsd24Hr).toFixed(2)}</p>
+          <p>Precio: USD$ {parseFloat(criptomonedaBuscada.priceUsd).toFixed(2)}</p>
+          <p>Fluctuacion ult. 24h: {parseFloat(criptomonedaBuscada.changePercent24Hr).toFixed(2)}%</p>
+        </div>
       </div>
     </>
   )
