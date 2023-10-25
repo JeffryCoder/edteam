@@ -37,7 +37,7 @@ function App () {
         {
           criptomonedas.map((criptomoneda) => {
             console.log(criptomoneda)
-            return <TarjetaCriptomoneda key={criptomoneda.id} id={criptomoneda.id} nombreCriptomoneda={criptomoneda.name} precioCriptomoneda={criptomoneda.priceUsd} precioUltimas24Horas={criptomoneda.changePercent24Hr} />
+            return <TarjetaCriptomoneda key={criptomoneda.id} id={criptomoneda.id} nombreCriptomoneda={criptomoneda.name} precioCriptomoneda={criptomoneda.priceUsd} precioUltimas24Horas={criptomoneda.changePercent24Hr} rankCriptomoneda={criptomoneda.rank} />
           })
         }
       </div>
