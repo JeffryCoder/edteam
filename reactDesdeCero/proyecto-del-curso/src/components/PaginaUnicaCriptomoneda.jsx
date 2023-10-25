@@ -5,12 +5,12 @@ import axios from 'axios'
 const PaginaUnicaCriptomoneda = () => {
   const API_URL = import.meta.env.VITE_API_URL
   const params = useParams()
-  const [criptomonedas, setCriptomonedas] = useState()
+  const [criptomonedaBuscada, setCriptomonedaBuscada] = useState()
 
   useEffect(() => {
     axios.get(`${API_URL}assets/${params.id}`)
       .then((data) => {
-        setCriptomonedas(data.data.data)
+        setCriptomonedaBuscada(data.data.data)
         console.log(data.data.data)
       })
       .catch(() => {
@@ -18,7 +18,7 @@ const PaginaUnicaCriptomoneda = () => {
       })
   }, [])
 
-  if (!criptomonedas) {
+  if (!criptomonedaBuscada) {
     return (
 
       <>
@@ -32,7 +32,17 @@ const PaginaUnicaCriptomoneda = () => {
   }
   return (
     <>
-      <h1>Hola, soy la criptomoneda: {params.id}</h1>
+      <h1>{criptomonedaBuscada.name}</h1>
+      <p>Id: {criptomonedaBuscada.id}</p>
+      <p>Symbol: {criptomonedaBuscada.symbol}</p>
+      <p>Ranking: {criptomonedaBuscada.rank}</p>
+      <p>Supply: {criptomonedaBuscada.supply}</p>
+      <p>Max Supply: {criptomonedaBuscada.maxSupply}</p>
+      <p>Market Cap: {criptomonedaBuscada.marketCapUsd}</p>
+      <p>Volumen: {criptomonedaBuscada.volumeUsd24Hr}</p>
+      <p>Precio: {criptomonedaBuscada.priceUsd}</p>
+      <p>Fluctuacion en las ultimas 24 horas: {criptomonedaBuscada.changePercent24Hr}%</p>
+
     </>
   )
 }
