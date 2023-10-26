@@ -33,9 +33,9 @@ const PaginaUnicaCriptomoneda = () => {
   }
   return (
     <>
-      <div href='#' className='paginaCriptoContainer bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-10 mt-10 text-right'>
+      <div href='#' className='paginaCriptoContainer bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-10 mt-10 text-right pointer-events-none'>
         <span className='inline text-2xl text-white border p-2'>{criptomonedaBuscada.rank}</span>
-        <h5 className='mb-2 text-2xl font-bold tracking-tight text-white text-center'>{criptomonedaBuscada.name}</h5> 
+        <h5 className='mb-2 text-2xl font-bold tracking-tight text-white text-center'>{criptomonedaBuscada.name}</h5>
         <div className='text-center text-blue-400'>
           <p>Ranking:  {criptomonedaBuscada.rank}</p>
           <p>Id: {criptomonedaBuscada.id}</p>
