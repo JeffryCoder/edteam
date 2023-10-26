@@ -17,7 +17,7 @@ const PaginaUnicaCriptomoneda = () => {
       .catch(() => {
         console.log('La petición falló')
       })
-  }, [])
+  }, [API_URL, params.id])
 
   if (!criptomonedaBuscada) {
     return (
