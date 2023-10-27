@@ -7,11 +7,23 @@ const PaginaUnicaCriptomoneda = () => {
   const API_URL = import.meta.env.VITE_API_URL
   const params = useParams()
   const [criptomonedaBuscada, setCriptomonedaBuscada] = useState()
+  const [historialCriptomeda, setHistorialCriptomeda] = useState({})
 
   useEffect(() => {
     axios.get(`${API_URL}assets/${params.id}`)
       .then((data) => {
         setCriptomonedaBuscada(data.data.data)
+        // console.log(data.data.data)
+      })
+      .catch(() => {
+        console.log('La petición falló')
+      })
+  }, [API_URL, params.id])
+
+  useEffect(() => {
+    axios.get(`${API_URL}assets/${params.id}/history?interval=d1`)
+      .then((data) => {
+        setHistorialCriptomeda(data.data.data)
         console.log(data.data.data)
       })
       .catch(() => {
@@ -47,6 +59,35 @@ const PaginaUnicaCriptomoneda = () => {
           <p>Precio: USD$ {parseFloat(criptomonedaBuscada.priceUsd).toFixed(2)}</p>
           <p>Fluctuacion ult. 24h: {parseFloat(criptomonedaBuscada.changePercent24Hr).toFixed(2)}%</p>
         </div>
+      </div>
+      <div>
+        <h4>Historial de precios</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              historialCriptomeda.length > 0 && historialCriptomeda.map((historial) => {
+                return (
+                  <tr key={historial.time}>
+                    <td>{historial.time}</td>
+                    <td>{historial.priceUsd}</td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+          {
+            // historialCriptomeda.length > 0 && historialCriptomeda.map((historial) => {
+            //   return <li key={historial.time}>{historial}</li>
+            // })
+            // JSON.stringify(historialCriptomeda)
+          }
+        </table>
       </div>
     </>
   )
