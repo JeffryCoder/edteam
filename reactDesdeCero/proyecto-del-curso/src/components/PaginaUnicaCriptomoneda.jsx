@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './PaginaUnicaCriptomoneda.css'
-
+import dayjs from 'dayjs'
 const PaginaUnicaCriptomoneda = () => {
   const API_URL = import.meta.env.VITE_API_URL
   const params = useParams()
@@ -61,8 +61,8 @@ const PaginaUnicaCriptomoneda = () => {
         </div>
       </div>
       <div>
-        <h4>Historial de precios por dia</h4>
-        <table>
+        <h4 className='text-white'>Historial de precios por dia</h4>
+        <table className='text-white table-auto'>
           <thead>
             <tr>
               <th>Fecha</th>
@@ -74,7 +74,11 @@ const PaginaUnicaCriptomoneda = () => {
               historialCriptomeda.length > 0 && historialCriptomeda.map((historial) => {
                 return (
                   <tr key={historial.time}>
-                    <td>{historial.date}</td>
+                    <td>
+                    {
+                      dayjs(historial.date).format('DD/MM/YYYY')
+                    }
+                    </td>
                     <td>{historial.priceUsd}</td>
                   </tr>
                 )
