@@ -61,7 +61,7 @@ const PaginaUnicaCriptomoneda = () => {
         </div>
       </div>
       <div>
-        <h4>Historial de precios</h4>
+        <h4>Historial de precios por dia</h4>
         <table>
           <thead>
             <tr>
@@ -74,19 +74,13 @@ const PaginaUnicaCriptomoneda = () => {
               historialCriptomeda.length > 0 && historialCriptomeda.map((historial) => {
                 return (
                   <tr key={historial.time}>
-                    <td>{historial.time}</td>
+                    <td>{historial.date}</td>
                     <td>{historial.priceUsd}</td>
                   </tr>
                 )
               })
             }
           </tbody>
-          {
-            // historialCriptomeda.length > 0 && historialCriptomeda.map((historial) => {
-            //   return <li key={historial.time}>{historial}</li>
-            // })
-            // JSON.stringify(historialCriptomeda)
-          }
         </table>
       </div>
     </>
