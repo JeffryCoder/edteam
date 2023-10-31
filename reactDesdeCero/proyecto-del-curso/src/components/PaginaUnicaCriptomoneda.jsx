@@ -75,11 +75,11 @@ const PaginaUnicaCriptomoneda = () => {
                 return (
                   <tr key={historial.time}>
                     <td>
-                    {
-                      dayjs(historial.date).format('DD/MM/YYYY')
-                    }
+                      {
+                        dayjs(historial.date).format('DD/MM/YYYY')
+                      }
                     </td>
-                    <td>{historial.priceUsd}</td>
+                    <td>{parseFloat(historial.priceUsd).toFixed(2)}</td>
                   </tr>
                 )
               })
