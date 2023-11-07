@@ -7,14 +7,14 @@ import PlantillaRoot from './components/PlantillaRoot.jsx'
 import Home from './components/Home.jsx'
 import PaginaUnicaCriptomoneda from './components/PaginaUnicaCriptomoneda.jsx'
 import Perfil from './components/Perfil.jsx'
+import About from './components/About.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Home />}>
+      <Route path='/' element={<PlantillaRoot />}>
         <Route index element={<Home />} />
-      </Route>
-      <Route path='perfil' element={<PlantillaRoot />}>
-        <Route index element={<Perfil />} />
+        <Route path='perfil' element={<Perfil />} />
+        <Route path='about' element={<About />} />
       </Route>
       <Route path='criptomonedas' element={<PlantillaRoot />}>
         <Route index element={<App />} />
