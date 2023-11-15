@@ -9,6 +9,7 @@ import PaginaUnicaCriptomoneda from './components/PaginaUnicaCriptomoneda.jsx'
 import Perfil from './components/Perfil.jsx'
 import About from './components/About.jsx'
 import { UserContextProvider } from './context/UserContext'
+import Login from './components/usuarios/Login.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UserContextProvider>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route index element={<App />} />
           <Route path=':id' element={<PaginaUnicaCriptomoneda />} />
         </Route>
+        <Route path='/login' element={<Login />} />
         <Route path='*' element={<Pagina404 />} />
       </Routes>
     </BrowserRouter>
