@@ -1,18 +1,20 @@
 import axios from 'axios'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [user, setUser] = useState({
     email: '',
     password: ''
   })
-
+  const navigate = useNavigate()
   const submit = (e) => {
     e.preventDefault()
     axios.post('https://reqres.in/api/login', user)
       .then(data => {
         window.localStorage.setItem('tokenFrixzitoCripto', data.data.token)
         console.log(data)
+        navigate('/')
       })
       .catch(e => console.error(e))
   }
