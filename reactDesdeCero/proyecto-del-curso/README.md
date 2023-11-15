@@ -13,3 +13,10 @@ Currently, two official plugins are available:
 
 - #Tarea 3
 - Recordar hacer el login mas bonito, y luego realizar loding cada vez que se haga una peticon en el fomulario con useState
+- Tambien agregar el codigo de error en el frontend a traves del backend falso del api, recordar usarlo dentro del catch manejando un useState de error
+- Tomar en cuenta el setError(null) para refrescar el frontend al momento de realizar una peticion nueva cuando ya se tiene el resultado de error de otra peticion anterior
+- PARA LA TAREA FINAL RECORDAR HACER UN PEFIL DE USUARIO COMPLETO CON EL API QUE SE USA PARA PRUEBAS
+
+
+#NOTAS IMPORTANTES, ANTES DE HACER UN BUILD CLONAR EL .env.local y renombrar como .env.production
+Desplegar en vercel para probar
