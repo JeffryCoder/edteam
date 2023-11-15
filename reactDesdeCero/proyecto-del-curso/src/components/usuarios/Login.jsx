@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useState } from 'react'
 
 const Login = () => {
@@ -8,8 +9,14 @@ const Login = () => {
 
   const submit = (e) => {
     e.preventDefault()
-    console.log(user)
+    axios.post('https://reqres.in/api/login', user)
+      .then(data => {
+        window.localStorage.setItem('tokenFrixzitoCripto', data.data.token)
+        console.log(data)
+      })
+      .catch(e => console.error(e))
   }
+
   return (
 
     <div className='login-container'>
