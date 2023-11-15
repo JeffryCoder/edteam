@@ -7,11 +7,11 @@ const UserContextProvider = ({ children }) => {
 
   useEffect(() => {
     setUsuario({
-      nombre: 'Jeffry',
-      apellido: 'Gonzalez',
-      edad: 29,
+      nombre: 'William',
+      apellido: 'Mendoza',
+      edad: 48,
       email: 'jeffrycoder@gmail.com',
-      registeredAt: '15 de noviembre'
+      registeredAt: '15 de noviembre del 2023'
     })
   }, [])
 
