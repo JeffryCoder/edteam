@@ -10,3 +10,6 @@ Currently, two official plugins are available:
 - -LISTO-  Recordar realizar componente que contenga cada criptomoneda como una tarjeta, y luego pasarle cada dato por props
 - #Tarea 2
 - Recordar realizar tarea para reutilizar los useEffect con mi propio hook, para mejorar el codigo
+
+- #Tarea 3
+- Recordar hacer el login mas bonito, y luego realizar loding cada vez que se haga una peticon en el fomulario con useState

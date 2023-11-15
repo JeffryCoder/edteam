@@ -7,16 +7,22 @@ const Login = () => {
     email: '',
     password: ''
   })
+  const [cargando, setCargando] = useState(false)
   const navigate = useNavigate()
   const submit = (e) => {
     e.preventDefault()
+    setCargando(true)
     axios.post('https://reqres.in/api/login', user)
       .then(data => {
+        setCargando(false)
         window.localStorage.setItem('tokenFrixzitoCripto', data.data.token)
         console.log(data)
         navigate('/')
       })
-      .catch(e => console.error(e))
+      .catch(e => {
+        setCargando(false)
+        console.error(e)
+      })
   }
 
   if (window.localStorage.getItem('tokenFrixzitoCripto')) return <Navigate to='/' />
@@ -51,7 +57,7 @@ const Login = () => {
           />
         </div>
         <div>
-          <button type='submit'>Acceder</button>
+          <input type='submit' value={cargando ? 'Cargando...' : 'Acceder'} />
         </div>
       </form>
     </div>
