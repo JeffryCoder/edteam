@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -18,6 +18,8 @@ const Login = () => {
       })
       .catch(e => console.error(e))
   }
+
+  if (window.localStorage.getItem('tokenFrixzitoCripto')) return <Navigate to='/' />
 
   return (
 
